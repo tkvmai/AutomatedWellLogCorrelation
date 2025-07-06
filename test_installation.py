@@ -7,6 +7,7 @@ automated well correlation system.
 
 import sys
 import os
+import matplotlib
 
 def test_imports():
     """Test all required package imports"""
@@ -76,6 +77,7 @@ def test_imports():
         return False
     
     try:
+        import matplotlib
         import matplotlib.pyplot as plt
         print(f"✅ Matplotlib {matplotlib.__version__}")
     except ImportError as e:
