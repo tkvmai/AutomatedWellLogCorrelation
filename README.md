@@ -1,4 +1,4 @@
-# Automated well log correlation using Python
+# Automated well log correlation using Python abc
 
 This repository contains a preliminary (and admittely incomplete) set of scripts that can be used to correlate two or more well logs automatically without any user input.
 
