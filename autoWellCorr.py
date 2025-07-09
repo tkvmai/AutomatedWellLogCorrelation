@@ -16,7 +16,7 @@ from scipy.interpolate import interp1d
 from scipy.ndimage import gaussian_filter
 from scipy.signal import argrelextrema
 from scipy.spatial.distance import cdist
-from sklearn.feature_extraction.image import extract_patches
+from sklearn.feature_extraction.image import extract_patches_2d
 from sklearn.linear_model import RANSACRegressor
 import networkx as nx
 
@@ -144,7 +144,7 @@ class AutoWellCorrelation:
             data = self.logData[self.logData['uid'] == uid]
             log = data[logName].values
             pad = np.pad(log, (self.halfWindow, self.halfWindow), mode='reflect')
-            patch = extract_patches(pad, self.windowSize)
+            patch = extract_patches_2d(pad, self.windowSize)
             patch = patch[np.newaxis]
             patch= np.moveaxis(patch, 1, 0)            
             self.patches[uid] = patch
